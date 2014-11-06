@@ -217,6 +217,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Zane Shannon";
 				TargetAttributes = {
+					11A0504E19AE832B00183EE4 = {
+						DevelopmentTeam = 3F6EJS53SF;
+					};
 					11A0506F19AE832B00183EE4 = {
 						TestTargetID = 11A0504E19AE832B00183EE4;
 					};
@@ -398,12 +401,15 @@
 			baseConfigurationReference = 92DB648C51494CD6A2CFB744 /* Pods-ZCSAvatarCaptureDemo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZCSAvatarCaptureDemo/ZCSAvatarCaptureDemo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "ZCSAvatarCaptureDemo/ZCSAvatarCaptureDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -413,12 +419,15 @@
 			baseConfigurationReference = 92DB648C51494CD6A2CFB744 /* Pods-ZCSAvatarCaptureDemo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZCSAvatarCaptureDemo/ZCSAvatarCaptureDemo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "ZCSAvatarCaptureDemo/ZCSAvatarCaptureDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

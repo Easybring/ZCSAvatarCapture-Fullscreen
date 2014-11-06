@@ -43,15 +43,12 @@
 	self.avatarView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	self.avatarView.contentMode = UIViewContentModeScaleAspectFill;
 	self.avatarView.layer.masksToBounds = YES;
-	self.avatarView.layer.cornerRadius = CGRectGetWidth(self.view.bounds) / 2;
 	[self.view addSubview:self.avatarView];
 }
 
 - (void)viewWillLayoutSubviews {
 	[super viewWillLayoutSubviews];
 	self.view.frame = self.view.superview.bounds;
-	self.view.layer.cornerRadius = CGRectGetWidth(self.view.bounds) / 2.0;
-	self.avatarView.layer.cornerRadius = CGRectGetWidth(self.view.bounds) / 2.0;
 }
 
 - (void)startCapture {
@@ -75,7 +72,6 @@
 
 	self.capturedImageView = [[UIImageView alloc] init];
 	self.capturedImageView.frame = previousFrame;
-	self.capturedImageView.layer.cornerRadius = CGRectGetWidth(previousFrame) / 2;
 	self.capturedImageView.layer.masksToBounds = YES;
 	self.capturedImageView.backgroundColor = [UIColor clearColor];
 	self.capturedImageView.userInteractionEnabled = YES;
@@ -84,7 +80,6 @@
 	self.captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
 	self.captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 	self.captureVideoPreviewLayer.frame = previousFrame;
-	self.captureVideoPreviewLayer.cornerRadius = CGRectGetWidth(self.captureVideoPreviewLayer.frame) / 2;
 	[self.captureView.layer addSublayer:self.captureVideoPreviewLayer];
 
 	NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -167,9 +162,7 @@
 	self.avatarView.image = self.image;
 	self.avatarView.contentMode = UIViewContentModeScaleAspectFill;
 	self.avatarView.layer.masksToBounds = YES;
-	self.avatarView.layer.cornerRadius = CGRectGetWidth(self.avatarView.frame) / 2;
 	[self.view addSubview:self.avatarView];
-	self.view.layer.cornerRadius = CGRectGetWidth(self.view.frame) / 2;
 	[self.captureView removeFromSuperview];
 	isCapturing = NO;
 }

@@ -22,8 +22,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
 	self.avatarCaptureController = [[ZCSAvatarCaptureController alloc] init];
 	self.avatarCaptureController.delegate = self;
-	self.avatarCaptureController.image = [UIImage imageNamed:@"model-001.jpg"];
+	//self.avatarCaptureController.image = [UIImage imageNamed:@"model-001.jpg"];
 	[self.avatarView addSubview:self.avatarCaptureController.view];
+    //[self.avatarCaptureController startCapture];
 }
 
 - (void)imageSelected:(UIImage *)image {

@@ -102,50 +102,57 @@
 		[self.stillImageOutput setOutputSettings:outputSettings];
 		[self.captureSession addOutput:self.stillImageOutput];
 		
-		UIButton *shutterButton =
-			[[UIButton alloc] initWithFrame:CGRectMake(previousFrame.origin.x + (CGRectGetWidth(previousFrame) / 2) - 50, previousFrame.origin.y + CGRectGetHeight(previousFrame) + 10, 100, 100)];
+		UIButton *shutterButton = [[UIButton alloc] initWithFrame:CGRectMake(
+            previousFrame.origin.x + (CGRectGetWidth(previousFrame) / 2) - 50,
+            previousFrame.origin.y + CGRectGetHeight(previousFrame) - 110,
+            100, 100
+         )];
 		[shutterButton setImage:[UIImage imageNamed:@"PKImageBundle.bundle/take-snap"] forState:UIControlStateNormal];
 		[shutterButton addTarget:self action:@selector(capturePhoto:) forControlEvents:UIControlEventTouchUpInside];
-		[shutterButton setTintColor:[UIColor blueColor]];
 		[shutterButton.layer setCornerRadius:20.0];
 		[self.captureView addSubview:shutterButton];
 
-		UIButton *swapCamerasButton =
-			[[UIButton alloc] initWithFrame:CGRectMake(previousFrame.origin.x, previousFrame.origin.y - 35, 47, 25)];
+		UIButton *swapCamerasButton = [[UIButton alloc] initWithFrame:CGRectMake(
+            previousFrame.origin.x + (CGRectGetWidth(previousFrame) / 2) + 70,
+            previousFrame.origin.y + CGRectGetHeight(previousFrame) - 70,
+            47, 25
+        )];
 		[swapCamerasButton setImage:[UIImage imageNamed:@"PKImageBundle.bundle/front-camera"] forState:UIControlStateNormal];
 		[swapCamerasButton addTarget:self action:@selector(swapCameras:) forControlEvents:UIControlEventTouchUpInside];
 		[self.captureView addSubview:swapCamerasButton];
 	}
 
-	UIButton *showImagePickerButton = [[UIButton alloc]
-		initWithFrame:CGRectMake(previousFrame.origin.x + CGRectGetWidth(previousFrame) - 27, previousFrame.origin.y - 35, 27, 27)];
+	UIButton *showImagePickerButton = [[UIButton alloc] initWithFrame:CGRectMake(
+        previousFrame.origin.x + (CGRectGetWidth(previousFrame) / 2) - 100,
+        previousFrame.origin.y + CGRectGetHeight(previousFrame) - 70,
+        27, 27
+    )];
 	[showImagePickerButton setImage:[UIImage imageNamed:@"PKImageBundle.bundle/library"] forState:UIControlStateNormal];
 	[showImagePickerButton addTarget:self action:@selector(showImagePicker:) forControlEvents:UIControlEventTouchUpInside];
 	[self.captureView addSubview:showImagePickerButton];
 
-	UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(previousFrame.origin.x + (CGRectGetWidth(previousFrame) / 2) - 16,
-									    previousFrame.origin.y + CGRectGetHeight(previousFrame) + 120, 32, 32)];
-	[cancelButton setImage:[UIImage imageNamed:@"PKImageBundle.bundle/cancel"] forState:UIControlStateNormal];
-	[cancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-	[self.captureView addSubview:cancelButton];
 
 	self.imageSelectedView = [[UIView alloc] initWithFrame:self.captureView.frame];
 	[self.imageSelectedView setBackgroundColor:[UIColor clearColor]];
 	[self.imageSelectedView addSubview:self.capturedImageView];
-
-	UIView *overlayView = [[UIView alloc]
-		initWithFrame:CGRectMake(0, previousFrame.origin.y + CGRectGetHeight(previousFrame), CGRectGetWidth(self.captureView.frame), 60)];
-	[self.imageSelectedView addSubview:overlayView];
-	UIButton *selectPhotoButton = [[UIButton alloc] initWithFrame:CGRectMake(previousFrame.origin.x, 0, 32, 32)];
+    
+    UIButton *selectPhotoButton = [[UIButton alloc] initWithFrame:CGRectMake(
+        previousFrame.origin.x + (CGRectGetWidth(previousFrame) / 2) - 16 - 50,
+        previousFrame.origin.y + CGRectGetHeight(previousFrame) - 70,
+        32, 32
+    )];
 	[selectPhotoButton setImage:[UIImage imageNamed:@"PKImageBundle.bundle/selected"] forState:UIControlStateNormal];
 	[selectPhotoButton addTarget:self action:@selector(photoSelected:) forControlEvents:UIControlEventTouchUpInside];
-	[overlayView addSubview:selectPhotoButton];
-
-	UIButton *cancelSelectPhotoButton =
-		[[UIButton alloc] initWithFrame:CGRectMake(previousFrame.origin.x + CGRectGetWidth(previousFrame) - 32, 0, 32, 32)];
-	[cancelSelectPhotoButton setImage:[UIImage imageNamed:@"PKImageBundle.bundle/cancel"] forState:UIControlStateNormal];
-	[cancelSelectPhotoButton addTarget:self action:@selector(cancelSelectedPhoto:) forControlEvents:UIControlEventTouchUpInside];
-	[overlayView addSubview:cancelSelectPhotoButton];
+	[self.imageSelectedView addSubview:selectPhotoButton];
+    
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(
+        previousFrame.origin.x + (CGRectGetWidth(previousFrame) / 2) - 16 + 50,
+        previousFrame.origin.y + CGRectGetHeight(previousFrame) - 70,
+        32, 32
+    )];
+    [cancelButton setImage:[UIImage imageNamed:@"PKImageBundle.bundle/cancel"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancelSelectedPhoto:) forControlEvents:UIControlEventTouchUpInside];
+    [self.imageSelectedView addSubview:cancelButton];
 
 	[self.captureSession startRunning];
 	[[UIApplication sharedApplication] setStatusBarHidden:YES];
@@ -159,7 +166,7 @@
 		[subview removeFromSuperview];
 	}
 	self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(previousFrame), CGRectGetHeight(previousFrame))];
-	self.avatarView.image = self.image;
+	//self.avatarView.image = self.image;
 	self.avatarView.contentMode = UIViewContentModeScaleAspectFill;
 	self.avatarView.layer.masksToBounds = YES;
 	[self.view addSubview:self.avatarView];

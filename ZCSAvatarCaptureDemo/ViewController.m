@@ -24,7 +24,11 @@
 	self.avatarCaptureController.delegate = self;
 	//self.avatarCaptureController.image = [UIImage imageNamed:@"model-001.jpg"];
 	[self.avatarView addSubview:self.avatarCaptureController.view];
-    //[self.avatarCaptureController startCapture];
+
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self.avatarCaptureController startCapture];
 }
 
 - (void)imageSelected:(UIImage *)image {

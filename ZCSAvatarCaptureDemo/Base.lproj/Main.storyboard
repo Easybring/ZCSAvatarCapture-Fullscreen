@@ -38,11 +38,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="mdF-bh-EgK" secondAttribute="trailing" constant="-16" id="4Ke-sq-J6S"/>
-                            <constraint firstAttribute="centerY" secondItem="mdF-bh-EgK" secondAttribute="centerY" id="4Th-Ti-jiN"/>
                             <constraint firstItem="mdF-bh-EgK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="7mp-bs-eQ9"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mdF-bh-EgK" secondAttribute="bottom" id="Ae6-IH-ZHg"/>
                             <constraint firstItem="mdF-bh-EgK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="CGp-C5-paS"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mdF-bh-EgK" secondAttribute="bottom" id="GLm-kz-8g6"/>
-                            <constraint firstAttribute="centerX" secondItem="mdF-bh-EgK" secondAttribute="centerX" id="NGd-fQ-3JJ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

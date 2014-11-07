@@ -51,6 +51,10 @@
 	self.view.frame = self.view.superview.bounds;
 }
 
+- (void)viewDidLayoutSubviews {
+    [self startCapture];
+}
+
 - (void)startCapture {
 	if (isCapturing) return;
 	isCapturing = YES;

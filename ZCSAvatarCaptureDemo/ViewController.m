@@ -27,10 +27,6 @@
 
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    [self.avatarCaptureController startCapture];
-}
-
 - (void)imageSelected:(UIImage *)image {
 	NSLog(@"imageSelected: %@", image);
 }

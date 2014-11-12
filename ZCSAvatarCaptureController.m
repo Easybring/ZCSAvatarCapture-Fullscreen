@@ -66,11 +66,6 @@
 	self.captureView = [[UIView alloc] initWithFrame:self.view.window.frame];
 	[self.view.window addSubview:self.captureView];
 	
-	UIView *shadeView = [[UIView alloc] initWithFrame:self.captureView.frame];
-	shadeView.alpha = 0.85f;
-	shadeView.backgroundColor = [UIColor blackColor];
-	[self.captureView addSubview:shadeView];
-	
 	self.captureSession = [[AVCaptureSession alloc] init];
 	self.captureSession.sessionPreset = AVCaptureSessionPresetPhoto;
 

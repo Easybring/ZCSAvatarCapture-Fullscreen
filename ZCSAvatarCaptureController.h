@@ -15,7 +15,7 @@
 - (void)imageSelectionCancelled;
 @end
 
-@interface ZCSAvatarCaptureController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ZCSAvatarCaptureController : UIViewController <UIImagePickerControllerDelegate>
 
 @property (weak) id<ZCSAvatarCaptureControllerDelegate> delegate;
 @property (strong, nonatomic) UIImage *image;

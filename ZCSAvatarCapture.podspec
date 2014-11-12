@@ -15,13 +15,13 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ZCSAvatarCapture"
-  s.version      = "0.0.4"
+  s.name         = "ZCSAvatarCapture-Fullscreen"
+  s.version      = "0.0.1"
   s.summary      = "User avatar editing made nice."
 
-  s.description  = "This is a nice interface for editing a photo. Just tap on the photo to change it. It's greate for user avatars."
+  s.description  = "This is a nice interface for editing a photo. Just tap on the photo to change it. It's great for user avatars."
 
-  s.homepage     = "https://github.com/zshannon/ZCSAvatarCapture"
+  s.homepage     = "https://github.com/Easybring/ZCSAvatarCapture-Fullscreen"
   s.screenshots  = ["https://raw.githubusercontent.com/zshannon/ZCSAvatarCapture/screenshots/one.png", "https://raw.githubusercontent.com/zshannon/ZCSAvatarCapture/screenshots/two.png", "https://raw.githubusercontent.com/zshannon/ZCSAvatarCapture/screenshots/three.png", "https://raw.githubusercontent.com/zshannon/ZCSAvatarCapture/screenshots/four.png"]
 
 
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
   #  Specify a social_media_url where others can refer to, for example a twitter
   #  profile URL.
   #
-  
+
   s.author             = { "Zane Shannon" => "zane@smileslaughs.com" }
   s.social_media_url   = "http://twitter.com/zaneshannon"
 

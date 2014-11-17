@@ -38,11 +38,8 @@
 	isCapturing = NO;
 	UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startCapture)];
 	[self.view addGestureRecognizer:singleTapGestureRecognizer];
-	self.avatarView = [[UIImageView alloc] initWithFrame:self.view.frame];
+	self.avatarView = [[UIImageView alloc] init];
 	self.avatarView.image = self.image;
-	self.avatarView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	self.avatarView.contentMode = UIViewContentModeScaleAspectFill;
-	self.avatarView.layer.masksToBounds = YES;
 	[self.view addSubview:self.avatarView];
 }
 
@@ -63,18 +60,16 @@
 	}
 	previousFrame = [self.view convertRect:self.view.frame toView:nil];
 	
-	self.captureView = [[UIView alloc] initWithFrame:self.view.window.frame];
-	[self.view.window addSubview:self.captureView];
+	self.captureView = [[UIView alloc] initWithFrame:self.view.frame];
+	[self.view addSubview:self.captureView];
 	
 	self.captureSession = [[AVCaptureSession alloc] init];
 	self.captureSession.sessionPreset = AVCaptureSessionPresetPhoto;
 
 	self.capturedImageView = [[UIImageView alloc] init];
+    self.capturedImageView.contentMode = UIViewContentModeScaleAspectFill;
 	self.capturedImageView.frame = previousFrame;
-	self.capturedImageView.layer.masksToBounds = YES;
-	self.capturedImageView.backgroundColor = [UIColor clearColor];
 	self.capturedImageView.userInteractionEnabled = YES;
-	self.capturedImageView.contentMode = UIViewContentModeScaleAspectFill;
 
 	self.captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
 	self.captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
@@ -132,7 +127,6 @@
 
 
 	self.imageSelectedView = [[UIView alloc] initWithFrame:self.captureView.frame];
-	[self.imageSelectedView setBackgroundColor:[UIColor clearColor]];
 	[self.imageSelectedView addSubview:self.capturedImageView];
     
     UIButton *selectPhotoButton = [[UIButton alloc] initWithFrame:CGRectMake(
@@ -164,10 +158,8 @@
 	for (UIView *subview in [self.captureView.subviews copy]) {
 		[subview removeFromSuperview];
 	}
-	self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(previousFrame), CGRectGetHeight(previousFrame))];
-	//self.avatarView.image = self.image;
-	self.avatarView.contentMode = UIViewContentModeScaleAspectFill;
-	self.avatarView.layer.masksToBounds = YES;
+    self.avatarView = [[UIImageView alloc] init];
+	self.avatarView.image = self.image;
 	[self.view addSubview:self.avatarView];
 	[self.captureView removeFromSuperview];
 	isCapturing = NO;
